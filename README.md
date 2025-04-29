@@ -2,6 +2,8 @@
 
 AnimBlog is a dynamic Flask-based web application that serves as a platform for anime enthusiasts to share their thoughts, experiences, and insights about anime culture.
 
+NOW IT IS ONLY FOR THE DESKTOP USE ADN OHTHER FEARTURE AND WILL COMMING SOON...
+
 ## 🌟 Features
 
 - **Modern UI Design**: Clean and responsive interface with a focus on readability

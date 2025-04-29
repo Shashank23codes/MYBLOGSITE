@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<section class="blogs-section">
+    <div class="blogs-header">
+        <h1>Latest Blog Posts</h1>
+        <p>Discover insights, stories, and knowledge through our carefully curated articles</p>
+        <div class="header-decoration">
+            <span class="line"></span>
+            <i class="fas fa-pen-fancy"></i>
+            <span class="line"></span>
+        </div>
+    </div>
+
+    <div class="blogs-grid">
+        {% for post in posts %}
+        <article class="blog-card">
+            <div class="blog-image">
+                {% if post.featured_image %}
+                <img src="{{ url_for('static', filename=post.featured_image) }}" alt="{{ post.title }}">
+                {% else %}
+                <div class="placeholder-image">
+                    <i class="fas fa-image"></i>
+                </div>
+                {% endif %}
+            </div>
+            <div class="blog-content">
+                <div class="content-wrapper">
+                    <div class="blog-category">{{ post.category }}</div>
+                    <h2 class="blog-title">{{ post.title }}</h2>
+                    <p class="blog-text">{{ post.content[:150]|safe }}...</p>
+                    <div class="blog-tags">
+                        {% for tag in post.tags %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="blog-meta">
+                    <div class="author">
+                        <div class="author-info">
+                            <span class="author-name">{{ post.author }}</span>
+                            <span class="post-date">{{ post.created_at }}</span>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('blog_details', post_id=post._id) }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
+<section class="add-post-section">
+  <div class="page-header">
+    <h1><i class="fas fa-feather-alt"></i> Create New Blog Post</h1>
+    <p>Share your thoughts with the world</p>
+  </div>
+
+  <form id="postForm" class="post-form" method="POST" action="/addPost" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="title">Blog Title</label>
+      <input type="text" id="title" name="title" placeholder="Enter an engaging title" required />
+    </div>
+
+    <div class="form-group">
+      <label for="author">Author Name</label>
+      <input type="text" id="author" name="author" placeholder="Your name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">Select Category</option>
+        <option value="technology">Technology</option>
+        <option value="lifestyle">Lifestyle</option>
+        <option value="travel">Travel</option>
+        <option value="food">Food</option>
+        <option value="health">Health</option>
+        <option value="entertainment">Entertainment</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Featured Image</label>
+      <div class="image-upload-container" id="dropZone">
+        <input type="file" id="imageInput" name="featured_image" accept="image/*" hidden>
+        <div class="upload-placeholder">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Drag and drop your image here or</p>
+          <button type="button" class="upload-btn" id="uploadBtn">Choose File</button>
+        </div>
+        <div class="image-preview" id="imagePreview">
+          <img src="#" alt="Preview" id="previewImg">
+          <button type="button" class="remove-image" id="removeImage">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="editor">Blog Content</label>
+      <div id="editor" class="editor-toolbar"></div>
+      <input type="hidden" name="content" id="blogContent">
+    </div>
+
+    <div class="form-group">
+      <label for="tags">Tags</label>
+      <input type="text" id="tags" name="tags" placeholder="Add tags (comma separated)" />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn-primary">
+        <i class="fas fa-share"></i> Publish Post
+      </button>
+      <button type="button" class="btn-secondary" id="clearBtn">
+        <i class="fas fa-undo"></i> Clear Form
+      </button>
+    </div>
+  </form>
+</section>
+
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="{{ url_for('static', filename='js/addPost.js') }}"></script>
+{% endblock %}

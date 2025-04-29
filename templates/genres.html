@@ -1,0 +1,33 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+{% block content %}
+<section class="genres-section">
+    <div class="genres-header">
+        <h1>Blog Categories</h1>
+        <p>Explore articles by your favorite topics</p>
+        <p>Comming Soon</p>
+        <div class="header-decoration">
+            <span class="line"></span>
+            <i class="fas fa-bookmark"></i>
+            <span class="line"></span>
+        </div>
+    </div>
+
+    <div class="genres-grid">
+        {% for genre in genres %}
+        <div class="genre-card">
+            <div class="genre-icon">
+                <i class="{{ genre.icon }}"></i>
+            </div>
+            <h2>{{ genre.name }}</h2>
+            <p>{{ genre.description }}</p>
+            <div class="genre-stats">
+                <span><i class="fas fa-file-alt"></i> {{ genre.post_count }} Posts</span>
+            </div>
+            <a href="{{ url_for('blogs_by_genre', genre=genre.name) }}" class="genre-link">
+                Explore <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

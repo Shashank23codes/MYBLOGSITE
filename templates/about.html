@@ -1,0 +1,77 @@
+<!DOCTYPE html> {% extends 'base.html' %}
+{% block content %}
+<section class="about-section">
+    <div class="about-header">
+        <h1>About Our Blog</h1>
+        <div class="header-decoration">
+            <span class="line"></span>
+            <i class="fas fa-book-reader"></i>
+            <span class="line"></span>
+        </div>
+    </div>
+
+    <div class="about-content">
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='img/app-preview.png') }}" alt="Blog Platform">
+        </div>
+        
+        <div class="mission-statement">
+            <h2>Our Mission</h2>
+            <p>We're dedicated to creating a platform where knowledge meets creativity. Our blog serves as a hub for sharing insights, stories, and experiences that inspire and inform.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-pen-fancy"></i>
+                <h3>Quality Content</h3>
+                <p>Carefully curated articles written by expert contributors across various topics.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>Community Driven</h3>
+                <p>A platform built for and by the community, fostering meaningful discussions.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Modern Platform</h3>
+                <p>Built with cutting-edge technology to provide the best user experience.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure &amp; Reliable</h3>
+                <p>Your content and data are protected with industry-standard security measures.</p>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Meet the Team</h2>
+            <div class="team-members">
+                <div class="team-member">
+                    <div class="member-avatar">
+                        <img src="{{ url_for('static', filename='img/author.png') }}" alt="Founder">
+                    </div>
+                    <h3>Shashank
+                        <hr>
+                        <p>23Codes</p>
+                    </h3>
+                    <p class="member-role">Founder &amp; Developer</p>
+                    <p class="member-bio">Passionate about creating meaningful digital experiences and fostering knowledge sharing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Get in Touch</h2>
+            <p>Have questions or suggestions? We'd love to hear from you!</p>
+            <div class="contact-buttons">
+                <a href="mailto:shashankgupta4068@gmail.com" class="contact-btn email-btn">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="https://github.com/Shashank23codes" class="contact-btn social-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

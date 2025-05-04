@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../static/css/style.css" />
-    <link rel="stylesheet" href="../static/css/index.css" />
-    <link rel="stylesheet" href="../static/css/blogs.css" />
-    <link rel="stylesheet" href="../static/css/blog_details.css" />
-    <link rel="stylesheet" href="../static/css/genres.css" />
-    <link rel="stylesheet" href="../static/css/about.css" />
-    <link rel="stylesheet" href="../static/css/addPost.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blogs.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog_details.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/genres.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/addPost.css') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -90,7 +90,7 @@
     </div>
 
     <!-- scripts files -->
-    <script src="../static/js/main.js"></script>
-     <script src="../static/js/addPost.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/addPost.js') }}"></script>
   </body>
 </html>
